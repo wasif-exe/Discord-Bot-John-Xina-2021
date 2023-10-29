@@ -1001,19 +1001,6 @@ async def ppsize(ctx,member:discord.Member):
   
     
 @client.command()
-async def rule34(ctx, *,tag:str):
-  url = f"https://rule34.xxx/index.php?page=dapi&s=post&q=index&tags={tag}"
-  response = requests.get(url)
-  image = response.json()['file_url']
-  
-  
-  if image.endswith('.mp4'):
-    response = requests.get(url)
-      
-
-  await ctx.send(image)
-
-@client.command()
 @commands.cooldown(1,10,commands.BucketType.user)
 async def credit(ctx):
     ques = 1
