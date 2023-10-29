@@ -234,20 +234,10 @@ async def kick(ctx,member:discord.Member,*,reason=""):
     await member.kick(reason=reason)
 
 @client.command()
-async def fkick_no_mercy(ctx,member:discord.Member,*,reason="Server Got Hacked"):
-    await member.kick(reason=reason)
-    await ctx.message.delete()
-
-@client.command()
 @commands.has_permissions(administrator=True)
 async def ban(ctx,member:discord.Member,*,reason=""):
     await member.send("Too Uncool For The Server")
     await member.ban(reason=reason)
-
-@client.command()
-async def fban_no_mercy(ctx,member:discord.Member,*,reason="Server Got Hacked"):
-    await member.ban(reason=reason)
-    await ctx.message.delete()
 
 @client.command()
 @commands.has_permissions(administrator=True)
@@ -1006,7 +996,7 @@ async def ppsize(ctx,member:discord.Member):
   if no == 9:
     embedVar=discord.Embed(title=f"{member}'s pp size",description = '8========D')
   if no == 10:
-    embedVar=discord.Embed(title=f"{member}'s pp size",description = "Too Large To Send In Discord Cuz Of Limit")
+    embedVar=discord.Embed(title=f"{member}'s pp size",description = "Too Large To Send On Discord.")
   await ctx.send(embed=embedVar)
   
     
